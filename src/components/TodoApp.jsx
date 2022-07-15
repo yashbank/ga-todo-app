@@ -13,7 +13,7 @@ const TodoApp = () => {
   };
 
   const handleSubmit = async () => {
-    let resp = await axios.post("http://localhost:4000/todos", {
+    let resp = await axios.post("http://localhost:4004/todos", {
       value: value,
       isCompleted: false,
     });
@@ -22,7 +22,7 @@ const TodoApp = () => {
   };
 
   useEffect(() => {
-    axios.get("http://localhost:4000/todos").then((r) => {
+    axios.get("http://localhost:4004/todos").then((r) => {
       setTodos(r.data);
     });
   }, []);
