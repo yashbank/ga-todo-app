@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import axios from "axios";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
+import { useEffect } from "react";
 
 const TodoApp = () => {
   const [value, setValue] = useState("");
@@ -10,11 +12,20 @@ const TodoApp = () => {
     setValue(e.target.value);
   };
 
-  const handleSubmit = () => {
-    setTodos([...todos, value]);
+  const handleSubmit = async () => {
+    let resp = await axios.post("http://localhost:4000/todos", {
+      value: value,
+      isCompleted: false,
+    });
+    setTodos([...todos, resp.data]);
     setValue("");
   };
 
+  useEffect(() => {
+    axios.get("http://localhost:4000/todos").then((r) => {
+      setTodos(r.data);
+    });
+  }, []);
   return (
     <div>
       <h3>TodoApp</h3>
