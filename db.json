@@ -1,3 +1,39 @@
 {
-  "todos": []
+  "todos": [
+    {
+      "value": "a",
+      "isCompleted": false,
+      "id": 1
+    },
+    {
+      "value": "aa",
+      "isCompleted": false,
+      "id": 2
+    },
+    {
+      "value": "aaa",
+      "isCompleted": false,
+      "id": 3
+    },
+    {
+      "value": "aaaa",
+      "isCompleted": false,
+      "id": 4
+    },
+    {
+      "value": "aaaaa",
+      "isCompleted": false,
+      "id": 5
+    },
+    {
+      "value": "aaaaaa",
+      "isCompleted": false,
+      "id": 6
+    },
+    {
+      "value": "yash bankar",
+      "isCompleted": false,
+      "id": 7
+    }
+  ]
 }
